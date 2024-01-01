@@ -1,0 +1,22 @@
+/**
+ * Variables
+ */
+$dark: #212121;
+$light: #f6fbda;
+$sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+/**
+ * Base styles
+ */
+body {
+  background: $dark;
+  color: $light;
+  font-family: $sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, pre {
+  font-family: $monospace;
+}
