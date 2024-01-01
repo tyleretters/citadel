@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/citadel/static/css/main.aedec10e.css",
+    "main.js": "/citadel/static/js/main.2e04ac7f.js",
+    "index.html": "/citadel/index.html",
+    "main.aedec10e.css.map": "/citadel/static/css/main.aedec10e.css.map",
+    "main.2e04ac7f.js.map": "/citadel/static/js/main.2e04ac7f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aedec10e.css",
+    "static/js/main.2e04ac7f.js"
+  ]
+}
