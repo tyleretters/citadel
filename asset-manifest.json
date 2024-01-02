@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/citadel/static/css/main.aedec10e.css",
-    "main.js": "/citadel/static/js/main.14f059e5.js",
+    "main.css": "/citadel/static/css/main.f1f4914f.css",
+    "main.js": "/citadel/static/js/main.8484d9e0.js",
     "index.html": "/citadel/index.html",
-    "main.aedec10e.css.map": "/citadel/static/css/main.aedec10e.css.map",
-    "main.14f059e5.js.map": "/citadel/static/js/main.14f059e5.js.map"
+    "main.f1f4914f.css.map": "/citadel/static/css/main.f1f4914f.css.map",
+    "main.8484d9e0.js.map": "/citadel/static/js/main.8484d9e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.aedec10e.css",
-    "static/js/main.14f059e5.js"
+    "static/css/main.f1f4914f.css",
+    "static/js/main.8484d9e0.js"
   ]
 }
