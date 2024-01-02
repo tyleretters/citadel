@@ -1,7 +1,7 @@
 import React from 'react'
 import Release from './Release'
-import type { ReleaseType } from '../types'
-import discography from '@tyleretters/discography/dist/data.json'
+import discography from '@tyleretters/discography'
+import { Release as ReleaseType } from '@tyleretters/discography'
 
 function Releases() {
   return (
