@@ -1,12 +1,14 @@
 import React from 'react'
-import discogrpahy from '@tyleretters/discography/dist/data.json'
-console.log(discogrpahy)
+import Release from './Release'
+import type { ReleaseType } from '../types'
+import discography from '@tyleretters/discography/dist/data.json'
 
 function Releases() {
   return (
     <div className="releases">
-      <h2>Releases</h2>
-      <p>There are {discogrpahy.length} releases.</p>
+      {discography.map((data: ReleaseType) => (
+        <Release key={data.id} data={data} />
+      ))}
     </div>
   )
 } 

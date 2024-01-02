@@ -4,8 +4,10 @@ import Releases from './components/Releases'
 function App() {
   return (
     <div className="app">
-      <h1>Citadel</h1>
-      <em>An Interactive Discography of Tyler Etters</em>
+      <div className="header">
+        <h1>Citadel</h1>
+        <em>An Interactive Discography of Tyler Etters</em>
+      </div>
       <Releases />
     </div>
   );
