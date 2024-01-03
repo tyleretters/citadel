@@ -54,8 +54,25 @@ code, pre {
   ol {
     margin: 0 0 1rem 0;
     padding: 0 0 0 1rem;
-    li span {
-      color: $vague;
+    li {
+      span.track-length {
+        color: $vague;
+      }
+      span.track-title {
+        color: $light;
+      }
+      span.track-download a {
+        background: $light;
+        color: $dark;
+        text-decoration: none;
+        padding: 2px;
+        border: 1px solid $dark;
+        &:hover {
+          background: $dark;
+          color: $light;
+          border: 1px solid $light;
+        }
+      }
     }
   }
 }

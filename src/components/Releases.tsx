@@ -4,10 +4,11 @@ import discography from '@tyleretters/discography'
 import { Release as ReleaseType } from '@tyleretters/discography'
 
 function Releases() {
+  console.log(discography)
   return (
     <div className="releases">
-      {discography.map((data: ReleaseType) => (
-        <Release key={data.id} data={data} />
+      {discography.map((release: ReleaseType) => (
+        <Release key={release.id} release={release} />
       ))}
     </div>
   )

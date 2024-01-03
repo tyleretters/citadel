@@ -1,21 +1,17 @@
 import React from 'react'
-import { Release as ReleaseType } from '@tyleretters/discography'
+import Track from './Track'
+import { Release as ReleaseType, Track as TrackType } from '@tyleretters/discography'
 
-function Release(data: { data: ReleaseType }) {
-  const release = data.data // todo
-  const bucket = 'https://intertext.s3.us-west-1.amazonaws.com/'
-  const project_slug = release.project_slug
-  const release_slug = release.release_slug
-  const imgSrc = `${bucket}${project_slug}/${release.release_slug}/${release_slug}.jpg`
+function Release({ release }: { release: ReleaseType }) {
   return (
     <div className="release">
-      <h1>{ release.title }<span>{ release.released }</span></h1>
-      <img src={ imgSrc } alt={ release.title } />
-      <p>By: { release.project }</p>
+      <h1>{release.title}<span>{release.released}</span></h1>
+      <img src={release.cover_url} alt={release.title} />
+      <p>By: {release.project}</p>
       <ol>
-      { release.tracks.map((track, i) => (
-        <li key={i}>{ track.title } <span>{ track.length }</span></li>
-      )) }
+      {release.tracks.map((track: TrackType) => (
+        <Track key={track.id} track={track} hasWav={release.wav} hasMp3={release.mp3} />
+      ))}
       </ol>
     </div>
   )
