@@ -1,14 +1,14 @@
 import React from 'react'
+import Header from './components/Header'
 import Releases from './components/Releases'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <div className="app">
-      <div className="header">
-        <h1>Citadel</h1>
-        <em>An Interactive Discography of Tyler Etters</em>
-      </div>
+      <Header />
       <Releases />
+      <Footer />
     </div>
   );
 }
