@@ -13,12 +13,11 @@ function Track({track, hasMp3, hasWav}: { track: TrackType, hasWav: boolean, has
     <li className="track" key={track.id}>
       <span className="track-title">{track.title}</span>
       <span className="track-length">{track.length}</span>
+      {/* {hasMp3 && <span className="track-play">&#9658;</span>} */}
       {downloadButtons.map((button, index) => (
-        <span key={index} className="track-download">
-          <a href={button.url} target="_blank" rel="noreferrer">
-            {button.label}
-          </a>
-        </span>
+        <a key={index} href={button.url} target="_blank" rel="noreferrer" className="track-download">
+          {button.label}
+        </a>
       ))}
     </li>
   )
