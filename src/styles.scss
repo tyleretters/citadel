@@ -146,10 +146,6 @@ $breakpoints: (
     color: $lightest;
     cursor: pointer;
     position: relative;
-    &:hover {
-      background: $hover;
-      color: $dark;
-    }
     .left {
       width: 100%;
     }
