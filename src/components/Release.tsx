@@ -13,14 +13,16 @@ function Release({ release }: { release: ReleaseType }) {
   }
 
   function handleClose() {
-    setIsOpen(false)
+    if (isOpen) {
+      setIsOpen(false)
+    }
   }
 
   const releaseClass = isOpen ? 'release open' : 'release';
 
   return (
-    <div className={releaseClass} id={release.id} onClick={handleOpen}>
-      <div className="release-close" onClick={handleClose}>&times;</div>
+    <div className={releaseClass} id={release.id} onPointerDown={handleOpen}>
+      <div className="release-close" onPointerDown={handleClose}>&times;</div>
       <div className="left">
         <img src={release.cover_url} alt={release.title} />
         <h1 className="release-title">{release.title}</h1>
