@@ -1,6 +1,6 @@
-# Discogrpahy Frontend
+# Discography Frontend
 
-An interactive experience for the discography of Tyler Etters.
+Discography of Tyler Etters.
 
 ## Setup Instructions
 
