@@ -37,9 +37,11 @@ function Release({ release }: { release: ReleaseType }) {
         <h1 className="release-title">{release.title}</h1>
         <h2 className="release-project">{release.project}</h2>
         <h3 className="release-date">{formatDate(release.released)}</h3>
-        <p className="release-notes">{release.notes}</p>
-        <h3 className="release-credits">Credits:</h3>
-        <p className="release-credits">{release.credits}</p>
+        <hr/>
+        <div className="release-notes" dangerouslySetInnerHTML={{ __html: release.notes }} />
+        <h3 className="release-credits">Credits</h3>
+        <hr/>
+        <div className="release-credits" dangerouslySetInnerHTML={{ __html: release.credits }} />
       </div>
     </div>
   )

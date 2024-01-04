@@ -43,6 +43,13 @@ a {
   }
 }
 
+hr {
+  border: none;
+  border-top: 2px solid $medium;
+  margin: $defaultGap 0;
+  opacity: 1;
+}
+
 .app {
   max-width: 1440px;
   margin: auto;
@@ -178,6 +185,7 @@ $breakpoints: (
     h1.release-title,
     h2.release-project,
     h3.release-date,
+    h3.release-notes,
     h3.release-credits {
       margin: 0;
       font-size: 1rem;
@@ -191,6 +199,7 @@ $breakpoints: (
       color: $light;
       margin-bottom: $defaultGap;
     }
+    h3.release-notes,
     h3.release-credits {
       color: $light;
     }
@@ -288,6 +297,7 @@ $breakpoints: (
             font-size: 2rem;
           }
           h3.release-date {
+            margin: $defaultGap 0;
             font-size: 1rem;
           }
         }
