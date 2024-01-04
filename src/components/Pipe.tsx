@@ -1,8 +1,7 @@
 import React from 'react'
 
 function Pipe({ className }: { className?: string }) {
-  let pipeClassName= 'pipe'
-  pipeClassName = className ? `${pipeClassName} ${className}` : pipeClassName
+  const pipeClassName = className ? `pipe ${className}` : 'pipe'
   return <span className={pipeClassName}>&nbsp;|&nbsp;</span>
 }
 

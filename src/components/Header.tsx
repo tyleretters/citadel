@@ -14,6 +14,8 @@ function Header() {
         <a href="https://www.npmjs.com/package/@tyleretters/discography">NPM</a>
         <Pipe />
         <a href="https://nor.the-rn.info">Blog</a>
+        <Pipe />
+        <a href="https://nor.the-rn.info/about">About</a>
       </p>
     </div>
   )
