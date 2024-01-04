@@ -3,12 +3,20 @@ import Track from './Track'
 import { Release as ReleaseType, Track as TrackType } from '@tyleretters/discography'
 import { formatDate } from '../utils/formatting'
 
-function Release({ release }: { release: ReleaseType }) {
+function Release({ release, openEvent }: { release: ReleaseType, openEvent: Function }) {
   const [isOpen, setIsOpen] = useState(false)
 
   function handleOpen() {
     if (!isOpen) {
+      openEvent()
       setIsOpen(true)
+      // todo: refactor the following after filtering is built
+      window.scrollTo(0, 0)
+      const releases = document.querySelector('.releases')
+      const thisRelease = document.getElementById(release.id)
+      if (releases && thisRelease) {
+        releases.prepend(thisRelease)
+      }
     }
   }
 
@@ -18,11 +26,13 @@ function Release({ release }: { release: ReleaseType }) {
     }
   }
 
-  const releaseClass = isOpen ? 'release open' : 'release';
-
   return (
-    <div className={releaseClass} id={release.id} onPointerDown={handleOpen}>
-      <div className="release-close" onPointerDown={handleClose}>&times;</div>
+    <div
+      className={'release' + (isOpen ? ' open' : '')}
+      id={release.id}
+      onClick={handleOpen}
+    >
+      <div className="release-close" onClick={handleClose}>&times;</div>
       <div className="left">
         <img src={release.cover_url} alt={release.title} />
         <h1 className="release-title">{release.title}</h1>

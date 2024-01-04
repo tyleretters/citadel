@@ -4,19 +4,24 @@ import discography from '@tyleretters/discography'
 import { Release as ReleaseType } from '@tyleretters/discography'
 
 function Releases() {
-  console.log(discography)
+  let visited = false
   useEffect(() => {
-    const elements = document.querySelectorAll('.releases > div');
-
-    elements.forEach((element, index) => {
-      (element as HTMLElement).style.animationDelay = `${index * 0.05}s`;
-    });
+    if (visited) return
+    console.log(discography)
+    visited = true
   }, []);
-
+  function openEvent(){
+    // close all other releases
+    console.log('left off here')
+  }
   return (
     <div className="releases">
       {discography.map((release: ReleaseType) => (
-        <Release key={release.id} release={release} />
+        <Release
+          key={release.id}
+          release={release}
+          openEvent={openEvent}
+        />
       ))}
     </div>
   )
