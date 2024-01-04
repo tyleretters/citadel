@@ -115,13 +115,15 @@ $breakpoints: (
 
 .header {
   margin: 0 0 $defaultGap 0;
+  display: block;
+  @include media-breakpoint-up(md) {
+    display: flex;
+    justify-content: space-between;
+  }
   h1, p {
     margin: 0;
     display: block;
     font-size: 1rem;
-    @include media-breakpoint-up(md) {
-      display: inline;
-    }
   }
 }
 
