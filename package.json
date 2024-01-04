@@ -1,7 +1,7 @@
 {
   "name": "discography-frontend",
-  "homepage": "https://tyleretters.github.io/discography-frontend",
-  "version": "0.0.0",
+  "homepage": "https://discography.tyleretters.com",
+  "version": "1.0.0",
   "private": false,
   "type": "module",
   "dependencies": {
