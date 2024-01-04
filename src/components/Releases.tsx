@@ -9,7 +9,7 @@ function Releases() {
     const elements = document.querySelectorAll('.releases > div');
 
     elements.forEach((element, index) => {
-      (element as HTMLElement).style.animationDelay = `${index * 0.1}s`;
+      (element as HTMLElement).style.animationDelay = `${index * 0.05}s`;
     });
   }, []);
 

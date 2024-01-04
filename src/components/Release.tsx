@@ -6,9 +6,8 @@ import { formatDate } from '../utils/formatting'
 function Release({ release }: { release: ReleaseType }) {
   const [isOpen, setIsOpen] = useState(false)
 
-  function handleOpen(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+  function handleOpen() {
     if (!isOpen) {
-      event.preventDefault()
       setIsOpen(true)
     }
   }
