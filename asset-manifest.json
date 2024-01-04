@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/discography-frontend/static/css/main.016dceb2.css",
+    "main.css": "/discography-frontend/static/css/main.e732e330.css",
     "main.js": "/discography-frontend/static/js/main.bf292027.js",
     "index.html": "/discography-frontend/index.html",
-    "main.016dceb2.css.map": "/discography-frontend/static/css/main.016dceb2.css.map",
+    "main.e732e330.css.map": "/discography-frontend/static/css/main.e732e330.css.map",
     "main.bf292027.js.map": "/discography-frontend/static/js/main.bf292027.js.map"
   },
   "entrypoints": [
-    "static/css/main.016dceb2.css",
+    "static/css/main.e732e330.css",
     "static/js/main.bf292027.js"
   ]
 }
