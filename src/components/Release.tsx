@@ -1,25 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { Release as ReleaseType } from "@tyleretters/discography"
 import { formatDate } from "../utils/formatting"
 
-function Release({ release, openEvent, closeEvent }: { release: ReleaseType, openEvent: Function, closeEvent: Function }) {
-  const [isOpen, setIsOpen] = useState(false)
-
-  function handleClick() {
-    if (!isOpen) {
-      openEvent(release.id)
-      setIsOpen(true)
-    } else {
-      closeEvent(release.id)
-      setIsOpen(false)
-    }
-  }
-
+function Release({ release, handleClick, isOpen }: { release: ReleaseType, handleClick: Function, isOpen: boolean }) {
   return (
     <li
       className={"release" + (isOpen ? " open" : "")}
       id={release.id}
-      onClick={handleClick}
+      onClick={() => handleClick(release)}
     >
       <img className="release-cover" src={release.cover_url} alt={release.title} />
       <h1 className="release-title">{release.title}</h1>

@@ -3,6 +3,7 @@
  */
 
 $defaultGap: 10px;
+$bigGap: $defaultGap * 5;
 $darkest: #212121;
 $dark: #323232;
 $medium: #4a4a4a;
@@ -93,7 +94,8 @@ $breakpoints: (
  */
 
 .app,
-.release {
+.release,
+.release-detail {
   opacity: 0;
   animation: fadeIn 0.5s ease-out forwards;
 }
@@ -170,57 +172,111 @@ ul.releases {
       background: $hover;
     }
   }
-} 
+}
 
-// .release-close {
-//   display: none;
-//   position: absolute;
-//   top: 4px;
-//   right: 4px;
-//   font-size: 40px;
-//   line-height: 23px;
-//   width: 30px;
-//   height: 30px;
-//   text-align: center;
-//   cursor: pointer;
-//   background: $hover;
-//   color: $dark;
-//   border: 1px solid transparent;
-//   &:hover {
-//     background: $dark;
-//     color: $hover;
-//     border: 1px solid $hover;
-//   }
-// }
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $defaultGap;
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-// ol {
-//   display: none;
-//   margin: 0;
-//   padding: 0 0 0 1.5rem;
-//   li {
-//     color: $light;
-//     margin-bottom: $defaultGap;
-//     span.track-title {
-//       color: $lightest;
-//     }
-//     span.track-length {
-//       font-family: $monospace;
-//       color: $light;
-//     }
-//     span.track-play,
-//     a.track-download {
-//       display: inline-block;
-//       cursor: pointer;
-//       background: $hover;
-//       color: $dark;
-//       text-decoration: none;
-//       padding: 2px;
-//       border: 1px solid $dark;
-//       &:hover {
-//         background: $dark;
-//         color: $hover;
-//         border: 1px solid $hover;
-//       }
-//     }
-//   }
-// }
+.release-detail {
+  box-sizing: border-box;
+  position: relative;
+  background: $dark;
+  color: $lightest;
+  padding: 6px;
+  width: 100%;
+  margin: 0 auto $defaultGap auto;
+  h1.release-title,
+  h2.release-project {
+    font-size: 1rem;
+    margin: 0;
+    margin-right: 30px + 2px + 6px; // see .release-close
+    @include media-breakpoint-up(sm) {
+      font-size: 1.5rem;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    }
+  }
+  h3.release-subtitle {
+    font-size: 1rem;
+    color: $light;
+    margin: 0 0 $defaultGap 0;
+  }
+  img.release-cover {
+    width: 100%;
+    height: auto;
+    margin-bottom: $defaultGap;
+  }
+  div.release-notes-html,
+  div.release-credits-html {
+    margin: 0 0 $bigGap 0;
+    p {
+      margin: 0 0 $defaultGap 0;
+    }
+  }
+  hr {
+    border-top: 2px solid $medium;
+    border-bottom: none;
+    margin: 0 0 $defaultGap 0;
+  }
+
+  .release-close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 40px;
+    line-height: 23px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    background: $hover;
+    color: $dark;
+    border: 1px solid $hover;
+    &:hover {
+      background: $dark;
+      color: $hover;
+    }
+  }
+
+  ol.release-tracks {
+    margin: 0;
+    padding: 0 0 0 1.5rem;
+    li.track {
+      color: $light;
+      margin-bottom: $defaultGap;
+      span,
+      a {
+        margin-right: 6px;
+      }
+      span.track-title {
+        color: $lightest;
+      }
+      span.track-length {
+        font-family: $monospace;
+        color: $light;
+      }
+      span.track-play,
+      a.track-download {
+        cursor: pointer;
+        background: $hover;
+        color: $dark;
+        text-decoration: none;
+        padding: 2px;
+        border: 1px solid $dark;
+        &:hover {
+          background: $dark;
+          color: $hover;
+          border: 1px solid $hover;
+        }
+      }
+    }
+  }
+
+}

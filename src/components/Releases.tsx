@@ -1,36 +1,32 @@
 import React, { useEffect, useState } from "react"
 import Release from "./Release"
-import discography from "@tyleretters/discography"
 import { Release as ReleaseType } from "@tyleretters/discography"
+import discography from "@tyleretters/discography"
 
-function Releases() {
-  const [openRelease, setOpenRelease] = useState<string|boolean>(false)
+
+function Releases({ handleOpen, isReleaseOpen }: { handleOpen: Function, isReleaseOpen: boolean }) {
+  const [openReleaseId, setOpenReleaseId] = useState<string|boolean>(false)
 
   useEffect(() => {
-    console.log(discography)
-  }, []);
+    if (!isReleaseOpen) {
+      setOpenReleaseId(false)
+    }
+  }, [isReleaseOpen])
 
-  function openEvent(releaseId: string){
-    // open this release
-    setOpenRelease(releaseId)
-    console.log("opening " + releaseId)
-  }
-
-  function closeEvent(releaseId: string){
-    // close all other releases
-    console.log("closing " + openRelease)
-    setOpenRelease(false)
+  function handleClick(release: ReleaseType){
+    setOpenReleaseId(openReleaseId === release.id ? false : release.id)
+    handleOpen(release)
   }
 
   return (
     <ul className="releases">
-      {discography.map((release: ReleaseType) => {
+      {discography.map((release) => {
         return (
           <Release
             key={release.id}
             release={release}
-            openEvent={openEvent}
-            closeEvent={closeEvent}
+            handleClick={handleClick}
+            isOpen={openReleaseId === release.id}
           />
         )
       })}
