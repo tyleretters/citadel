@@ -1,8 +1,11 @@
 /**
  * Variables
  */
+
+$defaultGap: 10px;
 $darkest: #212121;
 $dark: #323232;
+$medium: #4a4a4a;
 $light: #7a7a7a;
 $lightest: #f6fbda;
 $hover: #f2ff00;
@@ -12,12 +15,14 @@ $monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier
 /**
  * Base styles
  */
+
 body {
   background: $darkest;
   color: $light;
   font-family: $sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: $defaultGap;
 }
 
 ::selection {
@@ -39,12 +44,13 @@ a {
 }
 
 .pipe {
-  color: $light;
+  color: $medium;
 }
 
 /**
- * Media queries
+ * Media Queries
  */
+
 $breakpoints: (
   xs: 0,
   sm: 576px,
@@ -60,13 +66,54 @@ $breakpoints: (
   }
 }
 
+.d-none {
+  display: none !important;
+}
+
+.d-md-inline-block {
+  @include media-breakpoint-up(md) {
+    display: inline-block !important;
+  }
+}
+
+/**
+ * Animations
+ */
+
+.app,
+.release {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /**
  * Layout
  */
 
+.header {
+  margin: 0 0 $defaultGap 0;
+  h1, p {
+    margin: 0;
+    display: block;
+    font-size: 1rem;
+    @include media-breakpoint-up(md) {
+      display: inline;
+    }
+  }
+}
+
 .releases {
   display: grid;
-  gap: 10px;
+  gap: $defaultGap;
   grid-template-columns: repeat(2, 1fr);
   @include media-breakpoint-up(md) {
     grid-template-columns: repeat(3, 1fr);
@@ -85,6 +132,11 @@ $breakpoints: (
     white-space: nowrap;
     background: $dark;
     color: $lightest;
+    cursor: pointer;
+    &:hover {
+      background: $hover;
+      color: $dark;
+    }
     img {
       width: 100%;
       height: auto;

@@ -4,9 +4,9 @@ import Pipe from './Pipe'
 function Header() {
   return (
     <div className="header">
+      <h1>The Discography of Tyler Etters</h1>
       <p>
-        The Discography of Tyler Etters
-        <Pipe />
+        <Pipe className="d-none d-md-inline-block" />
         <a href="https://paypal.me/tyleretters">Donate</a>
         <Pipe />
         <a href="https://github.com/tyleretters/citadel">GitHub</a>
