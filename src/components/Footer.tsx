@@ -1,5 +1,5 @@
-import React from 'react'
-import Pipe from './Pipe'
+import React from "react"
+import Pipe from "./Pipe"
 
 function Footer() {
   return (

@@ -123,7 +123,9 @@ $breakpoints: (
   }
 }
 
-.releases {
+ul.releases {
+  margin: 0;
+  padding: 0;
   display: grid;
   gap: $defaultGap;
   grid-template-columns: repeat(2, 1fr);
@@ -136,171 +138,89 @@ $breakpoints: (
   @include media-breakpoint-up(xl) {
     grid-template-columns: repeat(7, 1fr);
   }
-  .release {
+  li.release {
     box-sizing: border-box;
-    border: 2px solid $dark;
-    padding: 4px;
+    padding: 6px;
     overflow: hidden;
     white-space: nowrap;
     background: $dark;
     color: $lightest;
     cursor: pointer;
-    position: relative;
-    .left {
-      width: 100%;
-    }
-    .right {
-      display: none;
-    }
-    img {
+    img.release-cover {
       box-sizing: border-box;
       width: 100%;
       height: auto;
       margin-bottom: $defaultGap;
     }
-    .release-close {
-      display: none;
-      position: absolute;
-      top: 4px;
-      right: 4px;
-      font-size: 40px;
-      line-height: 23px;
-      width: 30px;
-      height: 30px;
-      text-align: center;
-      cursor: pointer;
-      background: $hover;
-      color: $dark;
-      border: 1px solid transparent;
-      &:hover {
-        background: $dark;
-        color: $hover;
-        border: 1px solid $hover;
-      }
-    }
     h1.release-title,
     h2.release-project,
-    h3.release-date,
-    h3.release-notes,
-    h3.release-credits {
+    h3.release-date {
       margin: 0;
-      font-size: 1rem;
+      font-size: .8rem;
       overflow: hidden;
       text-overflow: ellipsis;
       font-weight: 600;
     }
     h3.release-date {
-      font-size: 0.8rem;
       color: $light;
       margin-bottom: $defaultGap;
     }
-    h3.release-notes,
-    h3.release-credits {
-      color: $light;
-    }
-    p {
-      margin: 0 0 1rem 0;
-    }
-    ol {
-      display: none;
-      margin: 0;
-      padding: 0 0 0 1.5rem;
-      li {
-        color: $light;
-        margin-bottom: $defaultGap;
-        span.track-title {
-          color: $lightest;
-        }
-        span.track-length {
-          font-family: $monospace;
-          color: $light;
-        }
-        span.track-play,
-        a.track-download {
-          display: inline-block;
-          cursor: pointer;
-          background: $hover;
-          color: $dark;
-          text-decoration: none;
-          padding: 2px;
-          border: 1px solid $dark;
-          &:hover {
-            background: $dark;
-            color: $hover;
-            border: 1px solid $hover;
-          }
-        }
-      }
-    }
     &.open {
-      // start behavior relative to the parent and siblings
-      overflow: visible;
-      white-space: wrap;
-      grid-column: span 2;
-      width: 100%;
-      &:hover {
-        cursor: default;
-        background: $dark;
-        color: $lightest;
-      }
-      @include media-breakpoint-up(md) {
-        grid-column: span 3;
-      }
-      @include media-breakpoint-up(lg) {
-        grid-column: span 5;
-      }
-      @include media-breakpoint-up(xl) {
-        grid-column: span 7;
-      }
-      // end
-      // start behavior for child elements
-      display: grid;
-      gap: $defaultGap;
-      grid-template-columns: repeat(1, 1fr);
-      @include media-breakpoint-up(md) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      // end
-      .release-close {
-        display: block;
-      }
-      .left {
-        @include media-breakpoint-up(md) {
-          h1.release-title,
-          h2.release-project,
-          h3.release-date {
-            display: none;
-          }
-        }
-      }
-      .right {
-        display: block;
-        overflow: hidden;
-        white-space: wrap;
-        h1.release-title,
-        h2.release-project,
-        h3.release-date {
-          display: none;
-        }
-        @include media-breakpoint-up(md) {
-          h1.release-title,
-          h2.release-project,
-          h3.release-date {
-            display: block;
-            padding-right: 40px;
-          }
-          h1.release-title {
-            font-size: 2rem;
-          }
-          h3.release-date {
-            margin: $defaultGap 0;
-            font-size: 1rem;
-          }
-        }
-      }
-      ol {
-        display: block;
-      }
+      color: $dark;
+      background: $hover;
     }
   }
 } 
+
+// .release-close {
+//   display: none;
+//   position: absolute;
+//   top: 4px;
+//   right: 4px;
+//   font-size: 40px;
+//   line-height: 23px;
+//   width: 30px;
+//   height: 30px;
+//   text-align: center;
+//   cursor: pointer;
+//   background: $hover;
+//   color: $dark;
+//   border: 1px solid transparent;
+//   &:hover {
+//     background: $dark;
+//     color: $hover;
+//     border: 1px solid $hover;
+//   }
+// }
+
+// ol {
+//   display: none;
+//   margin: 0;
+//   padding: 0 0 0 1.5rem;
+//   li {
+//     color: $light;
+//     margin-bottom: $defaultGap;
+//     span.track-title {
+//       color: $lightest;
+//     }
+//     span.track-length {
+//       font-family: $monospace;
+//       color: $light;
+//     }
+//     span.track-play,
+//     a.track-download {
+//       display: inline-block;
+//       cursor: pointer;
+//       background: $hover;
+//       color: $dark;
+//       text-decoration: none;
+//       padding: 2px;
+//       border: 1px solid $dark;
+//       &:hover {
+//         background: $dark;
+//         color: $hover;
+//         border: 1px solid $hover;
+//       }
+//     }
+//   }
+// }

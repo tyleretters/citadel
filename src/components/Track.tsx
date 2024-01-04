@@ -1,14 +1,14 @@
-import React from 'react'
-import { Track as TrackType } from '@tyleretters/discography'
-import Pipe from './Pipe'
+import React from "react"
+import { Track as TrackType } from "@tyleretters/discography"
+import Pipe from "./Pipe"
 
 function Track({track, hasMp3, hasWav}: { track: TrackType, hasWav: boolean, hasMp3: boolean }) {
   const downloadButtons = []
   if (hasMp3) {
-    downloadButtons.push({ url: track?.mp3_url, label: 'Download MP3' })
+    downloadButtons.push({ url: track?.mp3_url, label: "Download MP3" })
   }
   if (hasWav) {
-    downloadButtons.push({ url: track?.wav_url, label: 'Download WAV' })
+    downloadButtons.push({ url: track?.wav_url, label: "Download WAV" })
   }
   return (
     <li className="track" key={track.id}>
