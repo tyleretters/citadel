@@ -4,12 +4,12 @@ import Pipe from './Pipe'
 function Header() {
   return (
     <div className="header">
-      <h1>The Discography of Tyler Etters</h1>
+      <h1>Discography of Tyler Etters</h1>
       <p>
         <Pipe className="d-none d-md-inline-block" />
         <a href="https://paypal.me/tyleretters">Donate</a>
         <Pipe />
-        <a href="https://github.com/tyleretters/citadel">GitHub</a>
+        <a href="https://github.com/tyleretters/discography-frontend">GitHub</a>
         <Pipe />
         <a href="https://www.npmjs.com/package/@tyleretters/discography">NPM</a>
         <Pipe />

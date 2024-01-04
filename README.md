@@ -1,11 +1,11 @@
-# Citadel
+# Discogrpahy Frontend
 
 An interactive experience for the discography of Tyler Etters.
 
 ## Setup Instructions
 
-- clone citadel
-- `cd citadel`
+- clone discography-frontend
+- `cd discography-frontend`
 - `npm run start`
 
 ## Deploy Instructions
