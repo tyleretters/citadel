@@ -169,10 +169,6 @@ ul.releases {
       color: $light;
       margin-bottom: $defaultGap;
     }
-    &.open {
-      color: $dark;
-      background: $hover;
-    }
   }
 }
 
@@ -182,6 +178,9 @@ ul.releases {
   grid-gap: $defaultGap;
   @include media-breakpoint-up(sm) {
     grid-template-columns: 1fr 1fr;
+  }
+  .column {
+    overflow: scroll;
   }
 }
 
@@ -218,6 +217,7 @@ ul.releases {
   div.release-notes-html,
   div.release-credits-html {
     margin: 0 0 $bigGap 0;
+    overflow: scroll;
     p {
       margin: 0 0 $defaultGap 0;
     }
