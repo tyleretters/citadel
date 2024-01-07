@@ -1,7 +1,7 @@
 import React from "react"
 import Pipe from "./Pipe"
 
-function Header() {
+export default function Header() {
   return (
     <div className="header">
       <h1>Discography of Tyler Etters</h1>
@@ -19,5 +19,3 @@ function Header() {
     </div>
   )
 }
-
-export default Header

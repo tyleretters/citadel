@@ -1,7 +1,7 @@
 import React from "react"
 import Pipe from "./Pipe"
 
-function Footer() {
+export default function Footer() {
   return (
     <div className="Footer">
       <p>
@@ -14,5 +14,3 @@ function Footer() {
     </div>
   )
 }
-
-export default Footer

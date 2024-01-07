@@ -2,7 +2,7 @@ import React from "react"
 import { Release as ReleaseType } from "@tyleretters/discography"
 import { formatDate } from "../utils/formatting"
 
-function Release({ release, handleClick, isOpen }: { release: ReleaseType, handleClick: Function, isOpen: boolean }) {
+export default function Release({ release, handleClick, isOpen }: { release: ReleaseType, handleClick: Function, isOpen: boolean }) {
   return (
     <li
       className={"release" + (isOpen ? " open" : "")}
@@ -16,5 +16,3 @@ function Release({ release, handleClick, isOpen }: { release: ReleaseType, handl
     </li>
   )
 }
-
-export default Release

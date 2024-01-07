@@ -3,8 +3,7 @@ import Release from "./Release"
 import { Release as ReleaseType } from "@tyleretters/discography"
 import discography from "@tyleretters/discography"
 
-
-function Releases({ handleOpen, isReleaseOpen }: { handleOpen: Function, isReleaseOpen: boolean }) {
+export default function Releases({ handleOpen, isReleaseOpen }: { handleOpen: Function, isReleaseOpen: boolean }) {
   const [openReleaseId, setOpenReleaseId] = useState<string|boolean>(false)
 
   useEffect(() => {
@@ -32,6 +31,4 @@ function Releases({ handleOpen, isReleaseOpen }: { handleOpen: Function, isRelea
       })}
     </ul>
   )
-} 
-
-export default Releases
+}

@@ -1,14 +1,14 @@
 {
   "name": "discography-frontend",
   "homepage": "https://discography.tyleretters.com",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@tyleretters/discography": "^0.0.12",
+    "@tyleretters/discography": "^0.0.16",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.69",
     "@types/react": "^18.2.46",

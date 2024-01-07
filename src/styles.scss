@@ -31,8 +31,12 @@ body {
   color: $dark;
 }
 
-code, pre {
+.monospace {
   font-family: $monospace;
+}
+
+code, pre {
+  @extend .monospace;
 }
 
 a {
@@ -41,6 +45,20 @@ a {
   &:hover {
     color: $hover;
     text-decoration: none;
+  }
+}
+
+.button-rectangle {
+  cursor: pointer;
+  background: $hover;
+  color: $dark;
+  text-decoration: none;
+  padding: 0 2px;
+  border: 1px solid $dark;
+  &:hover {
+    background: $dark;
+    color: $hover;
+    border: 1px solid $hover;
   }
 }
 
@@ -175,9 +193,12 @@ ul.releases {
 .row {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: $defaultGap;
   @include media-breakpoint-up(sm) {
     grid-template-columns: 1fr 1fr;
+  }
+  grid-gap: $defaultGap;
+  @include media-breakpoint-up(lg) {
+    grid-gap: $bigGap;
   }
   .column {
     overflow: scroll;
@@ -192,6 +213,9 @@ ul.releases {
   padding: 6px;
   width: 100%;
   margin: 0 auto $defaultGap auto;
+  @include media-breakpoint-up(lg) {
+    padding: $bigGap;
+  }
   h1.release-title,
   h2.release-project {
     font-size: 1rem;
@@ -209,10 +233,24 @@ ul.releases {
     color: $light;
     margin: 0 0 $defaultGap 0;
   }
+  h3.release-runtime {
+    @extend .monospace;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0 0 $defaultGap 0;
+  }
   img.release-cover {
     width: 100%;
     height: auto;
     margin-bottom: $defaultGap;
+  }
+  a.release-download,
+  a.release-donate {
+    @extend .button-rectangle;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: $defaultGap
   }
   div.release-notes-html,
   div.release-credits-html {
@@ -247,9 +285,14 @@ ul.releases {
     }
   }
 
-  ol.release-tracks {
-    margin: 0;
+  ol.release-tracks,
+  ul.release-streams,
+  ul.release-stats {
+    margin: 0 0 $bigGap 0;
     padding: 0 0 0 1.5rem;
+  }
+
+  ol.release-tracks {
     li.track {
       color: $light;
       margin-bottom: $defaultGap;
@@ -259,24 +302,45 @@ ul.releases {
       }
       span.track-title {
         color: $lightest;
+        display: block;
+        margin-bottom: 2px;
+        @include media-breakpoint-up(md) {
+          display: inline-block;
+        }
       }
       span.track-length {
-        font-family: $monospace;
-        color: $light;
+        @extend .monospace;
       }
       span.track-play,
       a.track-download {
-        cursor: pointer;
-        background: $hover;
-        color: $dark;
-        text-decoration: none;
-        padding: 2px;
-        border: 1px solid $dark;
-        &:hover {
-          background: $dark;
-          color: $hover;
-          border: 1px solid $hover;
-        }
+        @extend .button-rectangle;
+      }
+    }
+  }
+
+  ul.release-streams {
+    list-style-type: none;
+    padding: 0;
+    li.stream {
+      margin-bottom: $defaultGap;
+      display: inline-block;
+      a {
+        @extend .button-rectangle;
+        margin-right: 6px;
+      }
+    }
+  }
+
+  ul.release-stats {
+    list-style-type: square;
+    li.stat {
+      color: $light;
+      margin-bottom: $defaultGap;
+      span.stat-title {
+        color: $lightest;
+      }
+      span.stat-value {
+        @extend .monospace;
       }
     }
   }
