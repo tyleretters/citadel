@@ -79,7 +79,7 @@ hr {
 }
 
 /**
- * Media Queries
+ * Media Queries & Responsive Behavior
  */
 
 $breakpoints: (
@@ -107,6 +107,21 @@ $breakpoints: (
   }
 }
 
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+  grid-gap: $defaultGap;
+  @include media-breakpoint-up(lg) {
+    grid-gap: $bigGap;
+  }
+  .column {
+    overflow: scroll;
+  }
+}
+
 /**
  * Animations
  */
@@ -131,7 +146,7 @@ $breakpoints: (
  * Layout
  */
 
-.header {
+div.header {
   margin: 0 0 $defaultGap 0;
   display: block;
   @include media-breakpoint-up(md) {
@@ -190,22 +205,7 @@ ul.releases {
   }
 }
 
-.row {
-  display: grid;
-  grid-template-columns: 1fr;
-  @include media-breakpoint-up(sm) {
-    grid-template-columns: 1fr 1fr;
-  }
-  grid-gap: $defaultGap;
-  @include media-breakpoint-up(lg) {
-    grid-gap: $bigGap;
-  }
-  .column {
-    overflow: scroll;
-  }
-}
-
-.release-detail {
+div.release-detail {
   box-sizing: border-box;
   position: relative;
   background: $dark;
