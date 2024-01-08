@@ -118,7 +118,7 @@ $breakpoints: (
     grid-gap: $bigGap;
   }
   .column {
-    overflow: scroll;
+    overflow: auto;
   }
 }
 
@@ -255,7 +255,7 @@ div.release-detail {
   div.release-notes-html,
   div.release-credits-html {
     margin: 0 0 $bigGap 0;
-    overflow: scroll;
+    overflow: auto;
     p {
       margin: 0 0 $defaultGap 0;
     }
