@@ -12,7 +12,7 @@ export default function Track({ track, hasMp3, hasWav }: { track: TrackType, has
   }
   return (
     <li className="track" key={track.id}>
-      <span className="track-title">{track.title}</span> 
+      <span className="track-title" dangerouslySetInnerHTML={{ __html: track.title }} />
       <span className="track-length">{length}</span>
       {/* {hasMp3 && <span className="track-play">&#9658;</span>} */}
       {downloadButtons.map((button, index) => (

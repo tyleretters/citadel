@@ -31,10 +31,10 @@ export default function Release({ release, handleClose }: { release: ReleaseType
           ))}
           </ol>
           {release.mp3 && (
-            <a href="{release.mp3_url}" className="release-download">Download MP3s</a>
+            <a href={release.mp3_url} className="release-download">Download MP3s</a>
           )}
           {release.wav && (
-            <a href="{release.wav_url}" className="release-download">Download WAVs</a>
+            <a href={release.wav_url} className="release-download">Download WAVs</a>
           )}
           {(release.mp3 || release.wav) && (
             <a className="release-donate" href="https://paypal.me/tyleretters" target="_blank" rel="noopener noreferrer">Donate</a>
