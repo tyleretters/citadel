@@ -2,6 +2,12 @@
 
 Discography of Tyler Etters.
 
+## Releasing New Music
+
+- Update and publish canonical discography NPM package.
+- Manually bump version in package.json here.
+- `npm i`
+
 ## Setup Instructions
 
 - clone discography-frontend
