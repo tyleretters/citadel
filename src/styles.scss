@@ -26,6 +26,10 @@ body {
   margin: $defaultGap;
 }
 
+p {
+  line-height: 1.33;
+}
+
 ::selection {
   background: $hover;
   color: $dark;
