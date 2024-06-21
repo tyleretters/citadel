@@ -5,7 +5,7 @@
   "private": false,
   "type": "module",
   "dependencies": {
-    "@tyleretters/discography": "0.0.29",
+    "@tyleretters/discography": "^0.0.30",
     "@types/node": "^20.12.7",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",

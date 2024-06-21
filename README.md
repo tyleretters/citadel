@@ -1,22 +1,9 @@
-# Discography Frontend
+# discography.tyleretters.com
 
-Discography of Tyler Etters.
-
-## Releasing New Music
-
-- Update and publish canonical discography NPM package.
-- Manually bump version in package.json here.
-- `npm i`
-
-## Setup Instructions
-
-- clone discography-frontend
-- `cd discography-frontend`
-- `npm run start`
-
-## Deploy Instructions
-
-Deployment via GitHub Pages. Slightly modified from instructions at [https://github.com/gitname/react-gh-pages](https://github.com/gitname/react-gh-pages).
-
-- `npm run deploy`
+- Update and publish the [canonical discography](https://github.com/tyleretters/discography) NPM package.
+- Upload assets to Intertext S3 bucket.
+- `npm install @tyleretters/discography@latest`
+- `npm run dev` (qa locally)
+- qa on github
+- `npm run deploy` ([slightly modified](https://github.com/gitname/react-gh-pages))
 - [https://discography.tyleretters.com](https://discography.tyleretters.com)
