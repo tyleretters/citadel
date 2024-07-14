@@ -46,6 +46,7 @@ export default function Release({ release, handleClose }: { release: ReleaseType
             {release.streams.map((stream: StreamType) => (
               <Stream key={stream.id} stream={stream} />
             ))}
+              <li className="stream"><em>also streaming elsewhere...</em></li>
             </ul>
           </>)}
           <h3 className="release-subtitle">Other</h3>

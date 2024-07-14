@@ -169,7 +169,7 @@ ul.releases {
   padding: 0;
   display: grid;
   gap: $defaultGap;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   @include media-breakpoint-up(md) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -328,6 +328,7 @@ div.release-detail {
     li.stream {
       margin-bottom: $defaultGap;
       display: inline-block;
+      color: $light;
       a {
         @extend .button-rectangle;
         margin-right: 6px;
